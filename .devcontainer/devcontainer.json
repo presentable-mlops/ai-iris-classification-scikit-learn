@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+	"name": "Presentable AI Dev Container - IRIS Classification scikit-learn",
+	// Use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../Dockerfile",
+		"target": "base"
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		// Developer tools
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// Code completion and AI
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				// Code formatting and linting
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.makefile-tools",
+				"dbaeumer.vscode-eslint",
+				"nhoizey.gremlins",
+				// Project management
+				"Gruntfuggly.todo-tree",
+				// Visuals
+				"oderwat.indent-rainbow",
+				// Jupyter support
+				"ms-toolsai.jupyter"
+			],
+			"settings": {
+				"editor.formatOnPaste": false, // required
+				"editor.formatOnType": false, // required
+				"editor.formatOnSave": true, // optional
+				"editor.formatOnSaveMode": "file", // required to format on save
+				"files.autoSave": "off", // optional but recommended
+				// Intent rainbow
+				"indentRainbow.indicatorStyle": "light",
+				"indentRainbow.lightIndicatorStyleLineWidth": 1,
+				"indentRainbow.colors": [
+					"rgba(255,255,64,0.3)",
+					"rgba(127,255,127,0.3)",
+					"rgba(255,127,255,0.3)",
+					"rgba(79,236,236,0.3)"
+				],
+				// The indent color if the number of spaces is not a multiple of "tabSize".
+				"indentRainbow.errorColor": "rgba(128,32,32,0.6)"
+			}
+		}
+	},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
